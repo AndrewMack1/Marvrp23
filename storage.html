@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LocalStorage Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #0a0a0a;
+            color: #fff;
+        }
+        .container {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #ff3366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #ff1f57;
+        }
+        pre {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            color: #fff;
+        }
+        .success {
+            color: #4CAF50;
+            margin: 10px 0;
+        }
+        .error {
+            color: #f44336;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>LocalStorage Contents:</h2>
+        <pre id="storage"></pre>
+        <button onclick="viewStorage()">View Storage</button>
+        <button onclick="clearStorage()">Clear Storage</button>
+        <button onclick="clearLastSpin()">Reset Cooldown</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function viewStorage() {
+            const storage = {};
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                storage[key] = localStorage.getItem(key);
+            }
+            document.getElementById('storage').textContent = JSON.stringify(storage, null, 2);
+            document.getElementById('message').textContent = '';
+        }
+
+        function clearStorage() {
+            localStorage.clear();
+            document.getElementById('message').className = 'success';
+            document.getElementById('message').textContent = 'LocalStorage cleared successfully!';
+            viewStorage();
+        }
+
+        function clearLastSpin() {
+            localStorage.removeItem('lastSpinTime');
+            document.getElementById('message').className = 'success';
+            document.getElementById('message').textContent = 'Cooldown reset successfully!';
+            viewStorage();
+        }
+
+        viewStorage();
+    </script>
+</body>
+</html>

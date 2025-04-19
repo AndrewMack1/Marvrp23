@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#Marv Romania Roleplay</title>
+    <meta name="title" content="#Marv Romania Roleplay">
+    <meta name="description" content="Bine ați venit în cea mai bună experiență de roleplay din România! Alătură-te comunității noastre pentru o experiență unică de joc.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marvrp.netlify.app/">
+    <meta property="og:title" content="#Marv Romania Roleplay">
+    <meta property="og:description" content="Bine ați venit în cea mai bună experiență de roleplay din România! Alătură-te comunității noastre pentru o experiență unică de joc.">
+    <meta property="og:image" content="marv.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://marvrp.netlify.app/">
+    <meta property="twitter:title" content="#Marv Romania Roleplay">
+    <meta property="twitter:description" content="Bine ați venit în cea mai bună experiență de roleplay din România! Alătură-te comunității noastre pentru o experiență unică de joc.">
+    <meta property="twitter:image" content="marv.png">
+    <link rel="icon" type="image/png" href="marv.png">
+    <link rel="shortcut icon" type="image/png" href="marv.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div class="winning-popup" id="winningPopup" style="display: none;">
+    <div class="winning-content">
+        <h2>Felicitări!</h2>
+        <p>Ai câștigat: <span id="prizeDisplay"></span></p>
+        <p class="prize-id">ID-ul tău: <span id="prizeIdDisplay"></span></p>
+        <div class="save-id-section">
+            <div class="warning-message">
+                ⚠️ Salveaza acest ID, fara acest ID nu iti vei primii premiul!
+            </div>
+            <label class="save-confirmation">
+                <input type="checkbox" id="saveConfirmCheckbox">
+                <span>Am salvat ID-ul</span>
+            </label>
+            <div class="error-message" id="saveError">
+                ❌ Trebuie să confirmi că ai salvat ID-ul!
+            </div>
+        </div>
+        <p class="discord-info">Fa un ticket pe discord pentru a te lua premiul!</p>
+        <button class="close-button" id="closeWinningPopup">Închide</button>
+    </div>
+</div>
+<body>
+    <div class="music-player">
+        <audio id="bgMusic" loop>
+            <source src="marv.mp3" type="audio/mpeg">
+        </audio>
+        <div class="music-controls">
+            <button id="playPauseBtn">▶</button>
+            <button id="muteBtn">🔊</button>
+        </div>
+    </div>
+    <div class="hero">
+        <nav>
+            <div class="logo">#Marv Romania</div>
+            <ul>
+                <li><a href="#acasa">Acasă</a></li>
+                <li><a href="#despre">Despre Noi</a></li>
+                <li><a href="#reguli">Reguli</a></li>
+                <li><a href="#staff">Info</a></li>
+                <li><a href="https://discord.gg/marvrp">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="marv.png" alt="Marv Romania Logo">
+            </div>
+            <h1>#Marv Romania Roleplay</h1>
+            <p>Bine ați venit în cea mai bună experiență de roleplay din România!</p>
+            <a href="https://www.roblox.com/games/9690208731/Romania-Roleplay-Marv" class="play-button">Joacă Acum!</a>
+        </div>
+    </div>
+
+    <section id="despre">
+        <h2>Despre Jocul Nostru</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>Roleplay de Calitate</h3>
+                <p>Experimentează cel mai bun roleplay într-un mediu românesc autentic.</p>
+            </div>
+            <div class="feature">
+                <h3>Staff Dedicat</h3>
+                <p>Echipa noastră de moderatori este mereu prezentă pentru a asigura o experiență plăcută.</p>
+            </div>
+            <div class="feature">
+                <h3>Comunitate</h3>
+                <p>Fă parte dintr-o comunitate fun si pentru premii in joc.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reguli">
+        <h2>Regulile Jocului</h2>
+        <div class="rules">
+            <ul>
+                <li>
+                    <strong>In Character (IC)</strong>
+                    <p>Reprezintă momentul când simulezi viața reală prin acțiuni, decizii sau informații prin intermediul personajului creat de tine în joc.</p>
+                </li>
+                <li>
+                    <strong>Out Of Character (OOC)</strong>
+                    <p>Reprezintă momentul în care te detașezi de caracterul tău din joc și toate acțiunile, discuțiile sau situațiile sunt făcute pe chat-ul din joc sau alte rețele de socializare.</p>
+                </li>
+                <li>
+                    <strong>Fail Roleplay (FRP)</strong>
+                    <p>Reprezintă momentul în care nu reușești să te adaptezi la anumite situații sau acțiuni din viața reală într-un Roleplay.</p>
+                    <p class="sanctions">Sanctiuni: Avertisment la prima abatere, warn la abateri repetate.</p>
+                </li>
+                <li>
+                    <strong>Trolling</strong>
+                    <p>Interzis să cauți atenție și să deranjezi acțiunile roleplay ale altor jucători.</p>
+                    <p class="sanctions">Sanctiuni: Avertisment la prima abatere, ban temporar la abateri repetate.</p>
+                </li>
+                <li>Mai multe pe discord.gg/marvrp</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="staff">
+        <h2>Informatii Utile</h2>
+        <div class="staff-members">
+            <div class="staff-member">
+                <h3>De ce nu pot intra pe joc?</h3>
+                <p>Daca nu poti intra pe joc inseamna ca nu ai intrat pe grupul de roblox.</p>
+            </div>
+            <div class="staff-member">
+                <h3>Nu raspunde nimeni la ticket!</h3>
+                <p>Daca nici un membru staff nu iti raspunde la ticket in joc, te rugam sa deschizi unul la noi pe discord pentru ajutor.</p>
+            </div>
+            <div class="staff-member">
+                <h3>Cum fac bani?</h3>
+                <p>Daca ai nevoie de bani, i-ati job de tirist, livrator de mancare, etc. Prin aceste joburi faci bani eficient, sau poti incerca un team legal/ilegal.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="sparkEffect.js"></script>
+
+    <footer>
+        <p>&copy; 2024 #Marv Romania Roleplay. Toate drepturile rezervate.</p>
+        <p class="security-badge">🔒 Security Provided • Site Secure 🔒</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="anti-inspect.js"></script>
+    <script>
+        const audio = document.getElementById('bgMusic');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const muteBtn = document.getElementById('muteBtn');
+        
+        window.onload = function() {
+            audio.play().catch(function(error) {
+                console.log("Autoplay prevented. Please interact with the page first.");
+                playPauseBtn.classList.remove('playing');
+            });
+        };
+
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = '⏸';
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = '▶';
+                playPauseBtn.classList.remove('playing');
+            }
+        });
+
+        muteBtn.addEventListener('click', () => {
+            audio.muted = !audio.muted;
+            muteBtn.textContent = audio.muted ? '🔇' : '🔊';
+            muteBtn.classList.toggle('muted');
+        });
+    </script>
+</body>
+</html>
